@@ -1,19 +1,24 @@
 {
+  
   "name": "dev-stack-builder",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://khairul09h1.github.io/Assignment-5.1",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "lint": "oxlint",
-    "preview": "vite preview"
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
     "react-toastify": "^11.1.0"
   },
+  
   "devDependencies": {
     "@tailwindcss/vite": "^4.3.3",
     "@types/react": "^19.2.18",
@@ -25,4 +30,5 @@
     "tailwindcss": "^4.3.3",
     "vite": "^8.3.0"
   }
+  
 }
