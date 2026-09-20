@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------
+   Single source of truth for the brand gradient.
+   Change these three stops and the whole UI re-themes.
+------------------------------------------------------------------- */
+:root {
+  --brand-from: #f97316; /* orange */
+  --brand-via: #ec4899;  /* pink   */
+  --brand-to: #8b5cf6;   /* violet */
+}
+
+@theme inline {
+  --color-brand-from: var(--brand-from);
+  --color-brand-via: var(--brand-via);
+  --color-brand-to: var(--brand-to);
+}
+
+.brand-gradient-text {
+  background-image: linear-gradient(
+    90deg,
+    var(--brand-from),
+    var(--brand-via),
+    var(--brand-to)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.brand-gradient-bg {
+  background-image: linear-gradient(
+    90deg,
+    var(--brand-from),
+    var(--brand-via),
+    var(--brand-to)
+  );
+}
+
+body {
+  font-family:
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+}
+
+/* Custom scrollbar for the "Your Stack" panel */
+.stack-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+.stack-scroll::-webkit-scrollbar-thumb {
+  background-color: #e2e8f0;
+  border-radius: 9999px;
+}
